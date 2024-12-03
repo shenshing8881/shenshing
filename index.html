@@ -1,56 +1,64 @@
-:
-
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            background: linear-gradient(to bottom, pink, red);
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        #welcome {
-            margin-top: 20px;
-            color: white;
-            font-size: 24px;
-        }
-        .task {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treasure Hunt</title>
+<style>
+    body {
+        background-color: pink;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    #welcome-dialogue {
+        text-align: center;
+        margin-top: 50px;
+        color: white;
+        font-size: 24px;
+    }
+
+    .task {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
-    <div id="welcome">
-        <h1>Welcome to the Treasure Hunt!</h1>
-    </div>
-    <div id="task1" class="task">
-        <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">Task 1</a>
-    </div>
-    <div id="task2" class="task">
-        <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">Task 2</a>
-    </div>
-    <div id="task3" class="task">
-        <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">Task 3</a>
-    </div>
+<div id="welcome-dialogue">
+    <h1>Welcome to the Treasure Hunt!</h1>
+</div>
 
-    <script>
-        document.getElementById('task1').style.display = 'block';
+<div id="task1" class="task">
+    <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">Task 1</a>
+</div>
 
-        document.getElementById('task1').addEventListener('click', function() {
-            document.getElementById('task2').style.display = 'block';
-        });
+<div id="task2" class="task">
+    <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">Task 2</a>
+</div>
 
-        document.getElementById('task2').addEventListener('click', function() {
-            document.getElementById('task3').style.display = 'block';
-        });
+<div id="task3" class="task">
+    <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">Task 3</a>
+</div>
 
-        document.getElementById('task3').addEventListener('click', function() {
-            window.location.href = 'https://google.com';
-        });
-    </script>
+<script>
+    document.getElementById('task1').style.display = 'block';
+
+    document.getElementById('task1').addEventListener('click', function() {
+        document.getElementById('task2').style.display = 'block';
+    });
+
+    document.getElementById('task2').addEventListener('click', function() {
+        document.getElementById('task3').style.display = 'block';
+    });
+
+    document.getElementById('task3').addEventListener('click', function() {
+        window.location.href = 'https://google.com';
+    });
+</script>
 </body>
 </html>
 ```
