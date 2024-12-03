@@ -2,78 +2,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xxx Viral</title>
-    <style>
-        body {
-            background: url('tg.jpeg') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xxx Viral</title>
+<style>
+    body {
+    background: url('tg.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
 
-        #welcome-dialogue {
-            margin-top: 50px;
-            color: white;
-            font-size: 24px;
-            background-color: rgba(255, 0, 0, 0.5); /* Red color with 50% opacity */
-            padding: 10px;
-            font-family: 'Pacifico', cursive;
-        }
+#welcome-dialogue {
+    margin-top: 50px;
+    color: white;
+    font-size: 24px;
+    background-color: rgba(255, 0, 0, 0.5); /* Red color with 50% opacity */
+    padding: 10px;
+    font-family: 'Pacifico', cursive;
+}
 
-        .task {
-            display: none;
-            margin-top: 20px;
-            transition: opacity 1s;
-            padding: 10px;
-            background-color: black;
-            color: white;
-            font-size: 1cm; /* Enlarge the font size of tasks by 1cm */
-        }
+.task {
+    display: none;
+    margin-top: 20px;
+    transition: opacity 1s;
+    padding: 10px;
+    color: white;
+    font-size: 1cm; /* Enlarge the font size by 1cm */
+    background-color: black; /* Black background for tasks */
+    border-radius: 5px;
+}
 
-        .show {
-            display: block;
-            background-color: rgba(0, 0, 0, 0.2); /* Add fade effect when task is completed */
-        }
+.show {
+    display: block;
+}
 
-        .yellow {
-            color: yellow;
-        }
-    </style>
+.yellow {
+    color: yellow;
+}
+</style>
 </head>
 <body>
-    <div id="welcome-dialogue">
-        <h1>Complete task to <span class="yellow">UNLOCK</span> content</h1>
-    </div>
+<div id="welcome-dialogue">
+    <h1>Complete task to <span class="yellow">UNLOCK</span> content</h1>
+</div>
 
-    <div id="task1" class="task">
-        <a href="#" onclick="showTask(this)">Task 1(Click Start)</a>
-    </div>
+<div id="task1" class="task">
+    <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">Task 1(Click Start)</a>
+</div>
 
-    <div id="task2" class="task">
-        <a href="#" onclick="showTask(this)">Task 2(Click Start)</a>
-    </div>
+<div id="task2" class="task">
+    <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">Task 2(Click Start)</a>
+</div>
 
-    <div id="task3" class="task">
-        <a href="#" onclick="showTask(this)">Final Task(Click Start)</a>
-    </div>
+<div id="task3" class="task">
+    <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">Final Task(Click Start)</a>
+</div>
 
-    <div id="reward" class="task">
-        <a href="https://google.com" target="_blank">Reward Content</a>
-    </div>
+<div id="reward" class="task">
+    <a href="https://google.com" target="_blank">Reward Content</a>
+</div>
 
-    <script>
-        function showTask(taskElement) {
-            taskElement.parentElement.classList.remove('show');
-            if (taskElement.parentElement.nextElementSibling) {
-                taskElement.parentElement.nextElementSibling.classList.add('show');
-            }
-        }
+<script>
+    document.getElementById('task1').classList.add('show');
 
-        document.getElementById('task1').classList.add('show');
-    </script>
+    document.getElementById('task1').addEventListener('click', function() {
+        setTimeout(function() {
+            document.getElementById('task1').classList.remove('show');
+            document.getElementById('task2').classList.add('show');
+        }, 5000); // Delay each task change by 5 seconds
+    });
+
+    document.getElementById('task2').addEventListener('click', function() {
+        setTimeout(function() {
+            document.getElementById('task2').classList.remove('show');
+            document.getElementById('task3').classList.add('show');
+        }, 5000); // Delay each task change by 5 seconds
+    });
+
+    document.getElementById('task3').addEventListener('click', function() {
+        setTimeout(function() {
+            document.getElementById('task3').classList.remove('show');
+            document.getElementById('reward').classList.add('show');
+        }, 5000); // Delay each task change by 5 seconds
+    });
+</script>
 </body>
 </html>
