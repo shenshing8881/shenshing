@@ -11,90 +11,88 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f9f9f9; /* Fallback color if gradients are not supported */
             background: linear-gradient(to right top, #ff6b6b, #ff3494, #ff65b3, #ff94d7, #ffb1ef);
             overflow: hidden;
+            position: relative;
         }
         
-        .task {
+        h1 {
             text-align: center;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            transition: opacity 0.5s;
-        }
-        
-        .hidden {
-            display: none;
+            color: #fff;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 36px;
+            margin-bottom: 50px;
         }
 
-        @keyframes hearts {
+        .heart-task {
+            position: absolute;
+            width: 250px;
+            height: 150px;
+            background-color: #ff0066;
+            clip-path: polygon(50% 15%, 85% 30%, 95% 62%, 96% 75%, 50% 95%, 4% 75%, 5% 62%, 15% 30%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #ffffff;
+            visibility: hidden;
+            animation: heart-fall 10s infinite linear;
+        }
+
+        @keyframes heart-fall {
             0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-200px);
+                transform: translateY(-100vh);
             }
             100% {
-                transform: translateY(0);
+                transform: translateY(100vh);
             }
         }
 
-        .heart {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: red;
-            transform: rotate(-45deg);
-            animation: hearts 1s infinite;
+        .heart-task.show {
+            visibility: visible;
         }
-
-        .heart:nth-child(1) {
-            top: 20%;
-            left: 15%;
-        }
-
-        .heart:nth-child(2) {
-            top: 30%;
-            left: 60%;
-        }
-
-        /* Add more heart shapes as needed */
 
     </style>
 </head>
 <body>
-    <div id="heartsContainer">
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <!-- Add more heart shapes as needed -->
+    <div class="heart-task" id="task1">
+        Task 1: Click <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">here</a>
+    </div>
+
+    <div class="heart-task" id="task2">
+        Task 2: Click <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">here</a>
+    </div>
+
+    <div class="heart-task" id="task3">
+        Task 3: Click <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">here</a>
     </div>
 
     <h1>Welcome to the Treasure Hunt!</h1>
-    
-    <div id="task1" class="task">
-        <p>Task 1: Click <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">here</a></p>
-    </div>
-    
-    <!-- Remaining task and unlockContent sections as before -->
-    
+
     <script>
-        document.getElementById("task1").addEventListener("click", function() {
-            document.getElementById("task1").classList.add("hidden");
-            document.getElementById("task2").classList.remove("hidden");
+        const task1 = document.getElementById('task1');
+        const task2 = document.getElementById('task2');
+        const task3 = document.getElementById('task3');
+
+        setTimeout(() => {
+            task1.classList.add('show');
+        }, 0);
+
+        task1.addEventListener('click', () => {
+            task1.classList.remove('show');
+            task2.classList.add('show');
         });
-        
-        document.getElementById("task2").addEventListener("click", function() {
-            document.getElementById("task2").classList.add("hidden");
-            document.getElementById("task3").classList.remove("hidden");
+
+        task2.addEventListener('click', () => {
+            task2.classList.remove('show');
+            task3.classList.add('show');
         });
-        
-        document.getElementById("task3").addEventListener("click", function() {
-            document.getElementById("task3").classList.add("hidden");
-            document.getElementById("unlockContent").classList.remove("hidden");
+
+        task3.addEventListener('click', () => {
+            window.location.href = "https://google.com";
         });
     </script>
+
 </body>
 </html>
 ```
-
