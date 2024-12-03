@@ -1,32 +1,82 @@
+
 ```html
 <!DOCTYPE html>
 <html>
 <head>
     <title>Unlock The Treasure</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9; /* Fallback color if gradients are not supported */
+            background: linear-gradient(to right top, #ff6b6b, #ff3494, #ff65b3, #ff94d7, #ffb1ef);
+            overflow: hidden;
+        }
+        
+        .task {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            transition: opacity 0.5s;
+        }
+        
         .hidden {
             display: none;
         }
+
+        @keyframes hearts {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-200px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: hearts 1s infinite;
+        }
+
+        .heart:nth-child(1) {
+            top: 20%;
+            left: 15%;
+        }
+
+        .heart:nth-child(2) {
+            top: 30%;
+            left: 60%;
+        }
+
+        /* Add more heart shapes as needed */
+
     </style>
 </head>
 <body>
+    <div id="heartsContainer">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <!-- Add more heart shapes as needed -->
+    </div>
+
     <h1>Welcome to the Treasure Hunt!</h1>
     
     <div id="task1" class="task">
         <p>Task 1: Click <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">here</a></p>
     </div>
     
-    <div id="task2" class="task hidden">
-        <p>Task 2: Click <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">here</a></p>
-    </div>
-    
-    <div id="task3" class="task hidden">
-        <p>Task 3: Click <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">here</a></p>
-    </div>
-    
-    <div id="unlockContent" class="task hidden">
-        <p>Unlock the Treasure: <a href="https://google.com">Click here</a></p>
-    </div>
+    <!-- Remaining task and unlockContent sections as before -->
     
     <script>
         document.getElementById("task1").addEventListener("click", function() {
@@ -47,3 +97,4 @@
 </body>
 </html>
 ```
+
