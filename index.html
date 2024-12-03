@@ -1,99 +1,56 @@
-
+:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Unlock The Treasure</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(to right top, #ff6b6b, #ff3494, #ff65b3, #ff94d7, #ffb1ef);
-            overflow: hidden;
-            position: relative;
-        }
-        
-        h1 {
+            background: linear-gradient(to bottom, pink, red);
             text-align: center;
-            color: #fff;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 36px;
-            margin-bottom: 50px;
+            margin: 0;
+            padding: 0;
         }
-
-        .heart {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ff0066;
-            clip-path: polygon(50% 15%, 85% 30%, 95% 62%, 96% 75%, 50% 95%, 4% 75%, 5% 62%, 15% 30%);
-            animation: heart-fall 10s infinite linear;
+        #welcome {
+            margin-top: 20px;
+            color: white;
+            font-size: 24px;
         }
-
-        @keyframes heart-fall {
-            0% {
-                transform: translateY(-100vh);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
+        .task {
+            display: none;
+            margin-top: 20px;
         }
-
     </style>
 </head>
 <body>
-    <div class="heart-fall"></div>
-    <div class="heart-fall"></div>
-    <div class="heart-fall"></div>
-
-    <h1>Welcome to the Treasure Hunt!</h1>
-
-    <div class="heart-task" id="task1">
-        Task 1: Click <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">here</a>
+    <div id="welcome">
+        <h1>Welcome to the Treasure Hunt!</h1>
     </div>
-
-    <div class="heart-task" id="task2">
-        Task 2: Click <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">here</a>
+    <div id="task1" class="task">
+        <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">Task 1</a>
     </div>
-
-    <div class="heart-task" id="task3">
-        Task 3: Click <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">here</a>
+    <div id="task2" class="task">
+        <a href="https://t.me/money_dogs_bot/money_dogs?startapp=upr6FlHh" target="_blank">Task 2</a>
+    </div>
+    <div id="task3" class="task">
+        <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">Task 3</a>
     </div>
 
     <script>
-        const task1 = document.getElementById('task1');
-        const task2 = document.getElementById('task2');
-        const task3 = document.getElementById('task3');
+        document.getElementById('task1').style.display = 'block';
 
-        setTimeout(() => {
-            task1.style.display = 'block';
-            task1.addEventListener('click', () => {
-                task1.style.display = 'none';
-                task2.style.display = 'block';
-            });
-        }, 0);
+        document.getElementById('task1').addEventListener('click', function() {
+            document.getElementById('task2').style.display = 'block';
+        });
 
-        setTimeout(() => {
-            task2.style.display = 'none';
-            task2.addEventListener('click', () => {
-                task2.style.display = 'none';
-                task3.style.display = 'block';
-            });
-        }, 0);
+        document.getElementById('task2').addEventListener('click', function() {
+            document.getElementById('task3').style.display = 'block';
+        });
 
-        setTimeout(() => {
-            task3.style.display = 'none';
-            task3.addEventListener('click', () => {
-                window.location.href = "https://google.com";
-            });
-        }, 0);
+        document.getElementById('task3').addEventListener('click', function() {
+            window.location.href = 'https://google.com';
+        });
     </script>
-
 </body>
 </html>
 ```
-
