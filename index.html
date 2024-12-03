@@ -1,4 +1,5 @@
 
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -24,18 +25,12 @@
             margin-bottom: 50px;
         }
 
-        .heart-task {
+        .heart {
             position: absolute;
-            width: 250px;
-            height: 150px;
+            width: 10px;
+            height: 10px;
             background-color: #ff0066;
             clip-path: polygon(50% 15%, 85% 30%, 95% 62%, 96% 75%, 50% 95%, 4% 75%, 5% 62%, 15% 30%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            color: #ffffff;
-            visibility: hidden;
             animation: heart-fall 10s infinite linear;
         }
 
@@ -48,13 +43,15 @@
             }
         }
 
-        .heart-task.show {
-            visibility: visible;
-        }
-
     </style>
 </head>
 <body>
+    <div class="heart-fall"></div>
+    <div class="heart-fall"></div>
+    <div class="heart-fall"></div>
+
+    <h1>Welcome to the Treasure Hunt!</h1>
+
     <div class="heart-task" id="task1">
         Task 1: Click <a href="https://t.me/Tomarket_ai_bot/app?startapp=r-00000hlC--p-_treasure" target="_blank">here</a>
     </div>
@@ -67,32 +64,36 @@
         Task 3: Click <a href="https://t.me/PAWSOG_bot/PAWS?startapp=UNiXpdD6" target="_blank">here</a>
     </div>
 
-    <h1>Welcome to the Treasure Hunt!</h1>
-
     <script>
         const task1 = document.getElementById('task1');
         const task2 = document.getElementById('task2');
         const task3 = document.getElementById('task3');
 
         setTimeout(() => {
-            task1.classList.add('show');
+            task1.style.display = 'block';
+            task1.addEventListener('click', () => {
+                task1.style.display = 'none';
+                task2.style.display = 'block';
+            });
         }, 0);
 
-        task1.addEventListener('click', () => {
-            task1.classList.remove('show');
-            task2.classList.add('show');
-        });
+        setTimeout(() => {
+            task2.style.display = 'none';
+            task2.addEventListener('click', () => {
+                task2.style.display = 'none';
+                task3.style.display = 'block';
+            });
+        }, 0);
 
-        task2.addEventListener('click', () => {
-            task2.classList.remove('show');
-            task3.classList.add('show');
-        });
-
-        task3.addEventListener('click', () => {
-            window.location.href = "https://google.com";
-        });
+        setTimeout(() => {
+            task3.style.display = 'none';
+            task3.addEventListener('click', () => {
+                window.location.href = "https://google.com";
+            });
+        }, 0);
     </script>
 
 </body>
 </html>
 ```
+
